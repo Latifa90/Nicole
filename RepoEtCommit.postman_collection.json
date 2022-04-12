@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "15a8d4d5-5eb1-4c08-815d-568030fd5dda",
+		"name": "RepoEtCommit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ListAllRepo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CommitApiTestingExpectedKo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.github.com/users/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"users",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TestExercice",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Nicole\"\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/Latifa90/repos",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"Latifa90",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REPOSITORY",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Nicole\"\n};"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/Latifa90/REPO",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"Latifa90",
+						"REPO"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
